@@ -21,7 +21,7 @@ namespace Demo_Xamarin
         TextView projectName;
         int count;
         // string that holds the path information about database
-        string dbpath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "dbContacts.db3");
+        string dbpath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "dbUserInfo.db3");
         
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,7 +34,15 @@ namespace Demo_Xamarin
             var db = new SQLiteConnection(dbpath);
 
             // Set up a table
-            db.CreateTable<Contack>();
+            db.CreateTable<User>();
+
+            // Create Some User Object
+            User user1 = new User("emon", "emon19@gmail.com", "No Parkinson");
+            User user2 = new User("shaon", "shaon.uiu.edu", "Yes, have Parkinson");
+
+            // Inserting the Created Object
+            db.Insert(user1);
+            db.Insert(user2);
 
             user_name = FindViewById<EditText>(Resource.Id.userName);
             email = FindViewById<EditText>(Resource.Id.email);
@@ -58,9 +66,6 @@ namespace Demo_Xamarin
 
                 return mappedByteBuffer;
             }
-
-          
-
 
         }
 

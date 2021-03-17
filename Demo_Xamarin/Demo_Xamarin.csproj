@@ -61,6 +61,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserInfo.cs" />
     <Compile Include="ThirdActivity.cs" />
     <Compile Include="SecondActivity.cs" />
     <Compile Include="MainActivity.cs" />
