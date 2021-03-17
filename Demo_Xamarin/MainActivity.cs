@@ -8,6 +8,8 @@ using Java.IO;
 using Java.Nio;
 using Java.Nio.Channels;
 using System;
+using SQLite;
+using System.IO;
 
 namespace Demo_Xamarin
 {
@@ -18,6 +20,8 @@ namespace Demo_Xamarin
         Button nextButton;
         TextView projectName;
         int count;
+        // string that holds the path information about database
+        string dbpath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "dbContacts.db3");
         
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -25,6 +29,12 @@ namespace Demo_Xamarin
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            // Set up a db connection
+            var db = new SQLiteConnection(dbpath);
+
+            // Set up a table
+            db.CreateTable<Contack>();
 
             user_name = FindViewById<EditText>(Resource.Id.userName);
             email = FindViewById<EditText>(Resource.Id.email);
