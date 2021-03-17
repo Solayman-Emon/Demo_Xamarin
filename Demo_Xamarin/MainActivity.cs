@@ -30,20 +30,6 @@ namespace Demo_Xamarin
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            // Set up a db connection
-            var db = new SQLiteConnection(dbpath);
-
-            // Set up a table
-            db.CreateTable<User>();
-
-            // Create Some User Object
-            User user1 = new User("emon", "emon19@gmail.com", "No Parkinson");
-            User user2 = new User("shaon", "shaon.uiu.edu", "Yes, have Parkinson");
-
-            // Inserting the Created Object
-            db.Insert(user1);
-            db.Insert(user2);
-
             user_name = FindViewById<EditText>(Resource.Id.userName);
             email = FindViewById<EditText>(Resource.Id.email);
             prkinsnSyn = FindViewById<EditText>(Resource.Id.prkinsnSyn);
@@ -51,7 +37,18 @@ namespace Demo_Xamarin
             nextButton = FindViewById<Button>(Resource.Id.nextButton);
             projectName = FindViewById<TextView>(Resource.Id.ProjectName);
 
-         
+            // Set up a db connection
+            var db = new SQLiteConnection(dbpath);
+
+            // Set up a table
+            db.CreateTable<User>();
+
+            // Create Some User Object
+            User user = new User(user_name.ToString(), email.ToString(), prkinsnSyn.ToString());
+
+            // Inserting the Created Object
+            db.Insert(user);
+
             nextButton.Click += (sender, e) => { 
                 Intent nextActivivty = new Intent(this, typeof(SecondActivity));
                 StartActivity(nextActivivty);
