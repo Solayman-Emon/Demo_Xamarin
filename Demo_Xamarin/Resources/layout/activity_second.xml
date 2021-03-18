@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
     
     <ImageView
@@ -14,17 +14,26 @@
         android:src="@drawable/brain"/>
     
     <Button
+		android:id="@+id/userInfo"
+		android:text="@string/userButtonTxt"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@color/PaleGreen"
+		android:layout_gravity="center"/>
+
+    <Button
 		android:id="@+id/bckButton"
-		android:text="@string/bckBtnTxt"		
+		android:text="@string/backButtonTxt"
+        android:layout_marginTop="250sp"
         android:layout_width="100dp"
         android:layout_height="50dp"
-		android:layout_marginLeft="100sp"/>
+		android:layout_gravity="center"/>
 
     <Button
 		android:id="@+id/nxtButton1"
-		android:text="@string/nxtButtonTxt"		
+		android:text="@string/nextButtonTxt"		
         android:layout_width="100dp"
         android:layout_height="50dp"
-		android:layout_marginLeft="100sp"/>
+		android:layout_gravity="center"/>
 
 </LinearLayout>

@@ -4,10 +4,12 @@
 	<string name="project_name">PVDoctor</string>
 	<string name="buttonText">Predict</string>
 	<string name="countButtonTxt">Count</string>
-	<string name="nxtButtonTxt">Next</string>
+	<string name="nextButtonTxt">Next</string>
 	<string name="num">0</string>
 	<string name="user_name">Name</string>
 	<string name="email">E-mail</string>
 	<string name="prkinsn">Do you have Parkinsons Syndrome</string>
-	<string name="bckBtnTxt">Back</string>
+	<string name="backButtonTxt">Back</string>
+	<string name="submitButtonTxt">Submit</string>
+	<string name="userButtonTxt">Users Info</string>
 </resources>

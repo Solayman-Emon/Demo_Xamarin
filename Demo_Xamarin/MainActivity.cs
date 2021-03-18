@@ -17,7 +17,7 @@ namespace Demo_Xamarin
     public class MainActivity : AppCompatActivity
     {
         EditText user_name, email, prkinsnSyn;
-        Button nextButton;
+        Button nextButton, submitButton;
         TextView projectName;
         int count;
         // string that holds the path information about database
@@ -35,6 +35,7 @@ namespace Demo_Xamarin
             prkinsnSyn = FindViewById<EditText>(Resource.Id.prkinsnSyn);
 
             nextButton = FindViewById<Button>(Resource.Id.nextButton);
+            submitButton = FindViewById<Button>(Resource.Id.submitButton);
             projectName = FindViewById<TextView>(Resource.Id.ProjectName);
 
             // Set up a db connection
@@ -46,8 +47,19 @@ namespace Demo_Xamarin
             // Create Some User Object
             User user = new User(user_name.ToString(), email.ToString(), prkinsnSyn.ToString());
 
-            // Inserting the Created Object
-            db.Insert(user);
+
+            submitButton.Click += (sender, e) =>
+            {
+                Context context = Application.Context;
+                string text = "Data Inserted on Dataset";
+                ToastLength duration = ToastLength.Short;
+
+                var toast = Toast.MakeText(context, text, duration);
+                toast.Show();
+
+                // Inserting the Created Object
+                db.Insert(user);
+            };
 
             nextButton.Click += (sender, e) => { 
                 Intent nextActivivty = new Intent(this, typeof(SecondActivity));
