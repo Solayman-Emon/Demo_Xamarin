@@ -22,7 +22,7 @@ namespace Demo_Xamarin
         int count;
         // string that holds the path information about database
         string dbpath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "dbUserInfo.db3");
-        
+     
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
