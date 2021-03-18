@@ -8,18 +8,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="50sp"
-        android:text="@string/num"
-        android:id="@+id/countText"
-        android:layout_marginTop="20dp"
+        android:text="@string/recordTxt"
+        android:id="@+id/recordText"
+        android:layout_marginTop="10dp"
         android:gravity="center"/>
     
     <Button
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="@string/countButtonTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strtRecordButtonTxt"
         android:layout_marginTop="20sp"
-		android:id="@+id/countButton"
+		android:id="@+id/strtRecordButton"
         android:layout_gravity="center"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stpRecordButtonTxt"
+        android:layout_marginTop="10sp"
+		android:id="@+id/stpRecordButton"
+        android:layout_gravity="center"/>
+
+     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:text="@string/playTxt"
+        android:id="@+id/playText"
+        android:layout_marginTop="10dp"
+        android:gravity="center"/>
 
 	<Button
         android:layout_width="100dp"

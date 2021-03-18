@@ -12,4 +12,8 @@
 	<string name="backButtonTxt">Back</string>
 	<string name="submitButtonTxt">Submit</string>
 	<string name="userButtonTxt">Users Info</string>
+	<string name="recordTxt">Recording</string>
+	<string name="strtRecordButtonTxt">Start Record</string>
+	<string name="stpRecordButtonTxt">Stop Record</string>
+	<string name="playTxt">Play</string>
 </resources>
