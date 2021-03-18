@@ -41,7 +41,7 @@ namespace Demo_Xamarin
                         }
                         else
                         {
-                            Toast.MakeText(this, "Granted", ToastLength.Short).Show();
+                            Toast.MakeText(this, "Not Granted", ToastLength.Short).Show();
                             isGrantedPermission = false; 
                         }
                     }
@@ -76,7 +76,7 @@ namespace Demo_Xamarin
             }
 
 
-            strtRecordButton.Enabled = false;
+            strtRecordButton.Enabled = true;
             stpRecordButton.Enabled = false;
 
             // Event 
@@ -103,12 +103,18 @@ namespace Demo_Xamarin
                     {
                         mediaRecorder.Prepare();
                         mediaRecorder.Start();
+
+                        strtRecordButton.Enabled = false;
+                        stpRecordButton.Enabled = true;
+                        Toast.MakeText(this, "Recording...", ToastLength.Short).Show();
                     }
                     catch(Exception Ex)
                     {
                         Log.Debug("DEBUG", Ex.Message);
                     }
                 }
+
+                stpRecordButton.Enabled = true;
             }
 
             void StopRecord()
